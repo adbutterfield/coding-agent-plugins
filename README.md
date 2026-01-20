@@ -1,4 +1,4 @@
-# Coding Agent Marketplace
+# Coding Agent Plugins
 
 A marketplace of skill plugins for coding agents using Claude Code CLI.
 
@@ -28,20 +28,20 @@ Skills for working with Claude Code: creating skills, creating custom agents, an
 Add the marketplace to Claude Code:
 
 ```bash
-/plugin marketplace add /path/to/coding-agent-plugins
+/plugin marketplace add adbutterfield/coding-agent-plugins
 ```
 
 Then install the plugins you want:
 
 ```bash
-/plugin install coding-skills@coding-agent-marketplace
-/plugin install meta-skills@coding-agent-marketplace
+/plugin install coding-skills@coding-agent-plugins
+/plugin install meta-skills@coding-agent-plugins
 ```
 
 Or install both:
 
 ```bash
-/plugin install coding-skills@coding-agent-marketplace meta-skills@coding-agent-marketplace
+/plugin install coding-skills@coding-agent-plugins meta-skills@coding-agent-plugins
 ```
 
 ## Requirements
