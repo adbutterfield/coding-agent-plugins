@@ -1,8 +1,10 @@
 {
-  "name": "coding-agent-plugin",
+  "name": "coding-agent-plugins",
   "description": "Collection of useful plugins for coding agents.",
   "version": "1.0.0",
   "author": {
     "name": "Adam Butterfield"
-  }
+  },
+  "license": "MIT",
+  "repository": "https://github.com/adbutterfield/coding-agent-plugins"
 }

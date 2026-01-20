@@ -1,0 +1,27 @@
+{
+  "name": "coding-agent-marketplace",
+  "owner": {
+    "name": "Adam Butterfield"
+  },
+  "metadata": {
+    "description": "A collection of skills for coding agents",
+    "version": "1.0.0",
+    "pluginRoot": "./plugins"
+  },
+  "plugins": [
+    {
+      "name": "coding-skills",
+      "source": "./coding-skills",
+      "description": "Practical skills for coding agents: React/Next.js optimization and safe Vitest execution",
+      "version": "1.0.0",
+      "keywords": ["react", "nextjs", "vitest", "testing", "performance"]
+    },
+    {
+      "name": "meta-skills",
+      "source": "./meta-skills",
+      "description": "Skills for working with Claude Code: creating skills, creating custom agents, and orchestrating task agents",
+      "version": "1.0.0",
+      "keywords": ["skills", "agents", "subagents", "claude-code", "workflow"]
+    }
+  ]
+}
