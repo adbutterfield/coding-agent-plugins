@@ -1,0 +1,10 @@
+{
+  "name": "coding-skills",
+  "description": "Practical skills for coding agents: React/Next.js optimization and safe Vitest execution",
+  "version": "1.0.0",
+  "author": {
+    "name": "Adam Butterfield"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/adbutterfield/coding-agent-plugins"
+}
