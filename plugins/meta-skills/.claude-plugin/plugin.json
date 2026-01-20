@@ -1,0 +1,10 @@
+{
+  "name": "meta-skills",
+  "description": "Skills for working with Claude Code: creating skills and orchestrating task agents",
+  "version": "1.0.0",
+  "author": {
+    "name": "Adam Butterfield"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/adbutterfield/coding-agent-plugins"
+}
