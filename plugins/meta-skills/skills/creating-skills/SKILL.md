@@ -34,13 +34,14 @@ Every skill requires a directory with a `SKILL.md` file:
 ```
 skill-name/
 ├── SKILL.md (required)
-├── references/ (optional - documentation and templates)
+├── references/ (optional - patterns Claude reads to understand)
 │   ├── REFERENCE.md (index file when 5+ files)
 │   ├── processing-details.md (intention-revealing names!)
-│   └── FORMS.md (form templates, structured data formats)
+│   └── form-structure-examples.md (patterns Claude learns from)
 ├── scripts/ (optional)
 │   └── process-data.js (Node.js preferred)
-└── assets/ (optional - static resources like images, data files)
+└── assets/ (optional - literal files Claude copies to output)
+    └── html-boilerplate.html, icons, brand assets
 ```
 
 **Important File Naming Conventions:**
@@ -95,6 +96,18 @@ Tips for optimal results.
 - **Optional fields**: `license`, `compatibility` (max 500 chars), `metadata` (key-value pairs), `allowed-tools` (space-delimited)
 - Note: Skills inherit all Claude Code CLI capabilities by default; `allowed-tools` is rarely needed
 
+## Degrees of Freedom
+
+When designing skill instructions, match your constraint level to the task:
+
+| Level | When to Use | Example |
+|-------|-------------|---------|
+| **High** | Multiple valid approaches exist | "Analyze the data and present findings" |
+| **Medium** | Preferred patterns with flexibility | Pseudocode with configurable parameters |
+| **Low** | Fragile operations requiring precision | Complete scripts with minimal variables |
+
+Think of it like navigation: an open field allows multiple routes (high freedom), but a narrow bridge requires guardrails (low freedom).
+
 ## Skill Locations
 
 - **Personal Skills**: `~/.claude/skills/` - Available across all Claude Code projects
@@ -106,10 +119,14 @@ When a user wants to create a new skill, use this interactive process:
 
 ## 1. Gather Requirements
 
-Ask the user:
+**Start with concrete examples:**
+- "Show me a specific task you want this skill to handle"
+- "Walk me through what you did last time"
+- "What would the ideal outcome look like?"
 
-- What task or workflow should this skill handle?
-- When should Claude invoke this skill? (be specific)
+Then abstract to general questions:
+- What patterns do these examples share?
+- When should Claude invoke this skill?
 - Should this be personal (global) or project-specific?
 - Are there similar patterns in the official docs to reference?
 
@@ -134,6 +151,11 @@ Based on requirements:
   - Modern JavaScript features
 - Provide complete, runnable commands
 - Show how to chain CLI operations
+
+**When to bundle scripts:**
+- Code requires deterministic reliability
+- Same code would be repeatedly rewritten
+- Token efficiency matters (script runs without context loading)
 
 Example Node.js script pattern:
 
@@ -222,17 +244,28 @@ When converting existing Claude Code sub-agent configurations (those in `~/.clau
 
 # Best Practices
 
-## Keep SKILL.md Concise
+## Progressive Disclosure Patterns
 
-Skills use progressive disclosure for efficient context usage:
+The context window is a public good—skills share it with everything else Claude needs.
+
+**Token budget by layer:**
 - **Metadata** (~100 tokens): Loaded at startup for all skills
 - **Instructions** (<5000 tokens / ~500 lines): Loaded when skill is activated
 - **References**: Loaded on-demand only when needed
 
-Guidelines:
+**Three patterns for organizing content:**
+
+1. **High-Level Guide + References**: Core workflow in SKILL.md, variant-specific details in separate files
+2. **Domain-Specific Organization**: Separate files by domain (e.g., `aws-patterns.md`, `gcp-patterns.md`)
+3. **Conditional Details**: Basic instructions with links to advanced features
+
+**Practical guidelines:**
 - Target SKILL.md under 500 lines
-- Challenge every piece of information: "Does Claude really need this explanation?"
-- Only add context Claude doesn't already know
+- Challenge every piece of information: "Does Claude really need this?"
+- Files >100 lines: Include a table of contents
+- Files >10k words: Include grep search patterns for navigation
+- Avoid deeply nested references—keep one level deep
+- All reference files should link directly from SKILL.md
 - Move detailed content to `references/` for on-demand loading
 
 ## Description Writing
