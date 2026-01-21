@@ -10,7 +10,7 @@ This skill guides you through designing and creating custom subagent configurati
 ## Official Documentation
 
 For the most current information, reference:
-- https://docs.anthropic.com/en/docs/claude-code/sub-agents
+- https://code.claude.com/docs/en/sub-agents
 
 ## When to Create a Custom Agent
 

@@ -32,7 +32,7 @@ Reference these guidelines when:
 
 ## Finding Rules
 
-See [references/REFERENCE.md](references/REFERENCE.md) for the complete rule index with descriptions and keywords.
+See `./references/REFERENCE.md` for the complete rule index with descriptions and keywords.
 
 **Searching for relevant rules:** Use the Keywords column in REFERENCE.md to grep for patterns like `await`, `useCallback`, `localStorage`, etc.
 
