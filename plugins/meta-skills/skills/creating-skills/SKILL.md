@@ -48,7 +48,7 @@ skill-name/
 
 - Use intention-revealing names for all supporting files
 - Examples: `./converting-sub-agents.md`, `./aws-deployment-patterns.md`, `./github-workflow-examples.md`
-- Standard folder names: `references/` (docs/templates), `scripts/` (executables), `assets/` (static resources)
+- Standard folder names: `references/` (patterns to learn from), `scripts/` (executables), `assets/` (literal output files)
 - Avoid generic single-file names like `./reference.md`, `./helpers.md`, `./utils.md`
 - Reference files with relative paths like `./filename.md` in SKILL.md
 - **Important:** All bundled files should be referenced from SKILL.md so Claude can discover them
@@ -221,7 +221,8 @@ When refining existing skills:
 
 3. **Add Supporting Files**:
 
-   - Templates for common patterns
+   - Pattern examples in `references/` (Claude learns from these)
+   - Boilerplate files in `assets/` (Claude copies these to output)
    - Node.js scripts for complex operations
    - Reference docs with descriptive names for detailed info
 
@@ -352,14 +353,22 @@ This helps validate the skill works correctly before deployment.
 
 # Detailed Reference Guides
 
-For in-depth information on specific topics, consult these reference files:
+For in-depth information, see `./references/REFERENCE.md` for an index, or consult directly:
 
+**Core Skill Development:**
 - `./references/skill-structure-and-format.md` — Complete SKILL.md format reference and directory structure
 - `./references/metadata-requirements.md` — Detailed guidance on name and description fields
 - `./references/skill-best-practices.md` — Extended best practices for skill design
+- `./references/skill-template.md` — Starter template for new SKILL.md files
+
+**Skill Maintenance:**
 - `./references/editing-skills-guide.md` — Comprehensive guide to refining existing skills
 - `./references/nodejs-and-cli-patterns.md` — Node.js scripting patterns and CLI tool examples
-- `./references/sub-agent-conversion-guide.md` — Guide for converting sub-agents to skills
+
+**Sub-Agent Conversion:**
+- `./references/sub-agent-conversion-guide.md` — Overview and key differences
+- `./references/sub-agent-conversion-examples.md` — Three detailed before/after examples
+- `./references/sub-agent-conversion-checklist.md` — Conversion checklist and troubleshooting
 
 # Your Approach
 
