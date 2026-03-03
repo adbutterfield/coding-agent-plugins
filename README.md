@@ -23,6 +23,15 @@ Skills for working with Claude Code: creating skills, creating custom agents, an
 | **creating-skills**           | Create new Claude Code skills, edit existing skills, or convert sub-agents to skills. Includes guidance on SKILL.md structure, naming conventions, and best practices   |
 | **orchestrating-task-agents** | Best practices for delegating work to Task agents including XML prompt structure, agent type selection, parallel/sequential coordination, and skill invocation patterns |
 
+### debate-skills
+
+Adversarial debate for code reviews and implementation planning using specialized multi-agent teams.
+
+| Skill                                | Description                                                                                                                                                                  |
+| ------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **debating-code-reviews**            | Orchestrate a team of 4 specialized reviewers (Tracer, Architect, Breaker, Prosecutor) who independently analyze code, then debate each other's findings to catch more bugs |
+| **debating-implementation-plans**    | Orchestrate a team of 4 planning specialists (Scout, Planner, Critic, Prosecutor) who independently analyze a task, then debate to produce a validated implementation plan   |
+
 ## Installation
 
 Add the marketplace to Claude Code:
@@ -36,12 +45,13 @@ Then install the plugins you want:
 ```bash
 /plugin install coding-skills@coding-agent-plugins
 /plugin install meta-skills@coding-agent-plugins
+/plugin install debate-skills@coding-agent-plugins
 ```
 
-Or install both:
+Or install all:
 
 ```bash
-/plugin install coding-skills@coding-agent-plugins meta-skills@coding-agent-plugins
+/plugin install coding-skills@coding-agent-plugins meta-skills@coding-agent-plugins debate-skills@coding-agent-plugins
 ```
 
 ## Requirements
