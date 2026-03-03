@@ -1,6 +1,6 @@
 {
-  "name": "review-skills",
-  "description": "Skills for AI-assisted code review: adversarial debate, multi-persona review teams, and review synthesis",
+  "name": "debate-skills",
+  "description": "Adversarial debate skills for coding agents: multi-persona code review debates and pre-implementation planning debates",
   "version": "1.0.0",
   "author": {
     "name": "Adam Butterfield"
